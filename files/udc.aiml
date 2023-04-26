@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<aiml version="2.0">
+  <category>
+    <pattern>hola</pattern>
+    <template>Hola, soy un asistente virtual, estoy para complacerle dime como puedo ayudarle</template>
+  </category>
+  
+  <category>
+      
+    <pattern>Que productos ofreces </pattern>
+    <template>Somos un ecommerce dedicada a la venta de productos tecnologicos. ¿Cual es tu nombre?</template>
+  </category>
+  
+    <category>
+      <pattern>soy *</pattern>
+      <template>
+        Hola <set name = "nombre" > <star/>. </set>
+        Sigues interesad@ en nuestros productos 
+      </template> 
+   </category>
+   
+   <category>
+      <pattern>por favor</pattern>
+      <template> Muy bien, Los productos disponibles son:
+          <ul>
+              <li>Computadoras</li>
+              <li>Celulares</li>
+              <li>Impresoras</li>
+              <li>Pantallas TV</li>
+          </ul>
+          
+          ¿Cual deseas comprar?
+      </template> 
+      </category>
+      
+      <category>
+          
+      <pattern>computadoras</pattern>
+      <template>
+        Ok <get name = "nombre" /> 
+        Las computadoras disponibles son:
+        <ul>
+            <li>Dell</li>
+            <li>HP</li>
+        </ul>
+      </template> 
+   </category>
+   
+    <category>
+          
+      <pattern>Dell</pattern>
+      <template>
+       <random>
+           <li>Caracteristicas?</li>
+           <li>precio?</li>
+       </random>
+      </template> 
+   </category>
+   
+    <category>
+          
+      <pattern>si </pattern>
+      <template> Sus caracteristicas son:
+       <ul>
+        <li>Modelo: Inspiron 14R.</li>
+        <li>Pantalla: LED 14"</li>
+        <li>Procesador: Intel Core i3-2330M.</li>
+        <li>Memoria RAM: 4GB.</li>
+        <li>Disco duro: 500GB. </li>
+        <li>Sistema operativo: Windows 7 Home Premium.</li>
+        <li>Unidad óptica: DVD-RW.</li> 
+        <li>Color: Negro.</li>
+        </ul>
+        
+        Te interesa su precio?
+    
+      </template>
+   </category>
+   
+   <category>
+   <pattern>si por favor</pattern>
+      <template>
+       Su precio es $1,000.
+       ¿Estas interesado en otro articulo?
+      </template> 
+   </category>
+   
+      <category>
+   <pattern>si claro</pattern>
+      <template>   
+       <random>
+           <li>Celulares</li>
+            <li>Impresoras</li>
+            <li>Pantallas TV</li>
+       </random>
+      </template> 
+   </category>
+   
+     <category>
+   <pattern>no gracias</pattern>
+      <template>   
+       <random>
+            <li>Ok, gracias <get name = "nombre" />fue un placer 
+            atenterte😎  </li>
+            <li>Esta bien, vuelve pronto 😊<get name = "nombre" />  </li>
+       </random>
+      </template> 
+   </category>
+</aiml>
